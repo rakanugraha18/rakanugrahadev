@@ -46,7 +46,7 @@ export default function CodeTyping({ className }: PowerShellProps) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowAnimation(true);
-    }, 1000); // Menunda animasi selama 3 detik
+    }, 1000);
 
     return () => clearTimeout(timeout);
   }, []);

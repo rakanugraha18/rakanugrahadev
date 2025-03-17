@@ -17,7 +17,7 @@ export default function Navbar() {
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // Sesuaikan dengan tinggi navbar
+      const offset = 80;
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({

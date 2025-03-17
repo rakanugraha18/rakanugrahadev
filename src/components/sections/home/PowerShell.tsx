@@ -92,12 +92,12 @@ export default function PowerShell({ className }: PowerShellProps) {
       {/* Tampilan Profil Setelah Instalasi */}
       {showProfile && (
         <div className="mt-4 text-md font-bold">
-          <p className="text-md">Hello 👋, I'm</p>
+          <p className="text-md">{`Hello 👋, I'm`}</p>
           <p className={`text-6xl text-[#14b8a6] ${firaCode.className}`}>
             Raka Nugraha
           </p>
           <p>
-            // I Optimize & Build Fullstack{" "}
+            {`// I Optimize & Build Fullstack`}{" "}
             <span className="text-blue-400">{"{Next.js}"}</span> &{" "}
             <span className="text-blue-400">{"{Expressjs}"}</span> Apps -
             Powered by <span className="text-yellow-400">{"{AI}"}</span>

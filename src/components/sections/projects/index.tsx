@@ -9,8 +9,8 @@ import useCurSection from "@/hooks/use-cur-section";
 import data from "@/data";
 
 export default function ProjectsSection() {
-  const ref = useRef<HTMLDivElement>(null); // ✅ Ref dengan HTMLDivElement
-  useCurSection(ref as RefObject<Element>, 0.1); // ✅ Pakai `as RefObject<Element>`
+  const ref = useRef<HTMLDivElement>(null);
+  useCurSection(ref as RefObject<Element>, 0.1);
   return (
     <section
       ref={ref}

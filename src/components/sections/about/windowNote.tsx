@@ -20,8 +20,7 @@ export default function WindowNote() {
         {[
           {
             title: "Who is Raka Nugraha?",
-            description:
-              "Hey, I'm Raka Nugraha, a full-stack developer in the making with a solid IT background. With over 4 years of experience in IT support and networking, I’m now transitioning into full-stack development, bringing a mix of problem-solving skills and technical expertise to the table.",
+            description: `Hey, I'm Raka Nugraha, a full-stack developer in the making with a solid IT background. With over 4 years of experience in IT support and networking, I’m now transitioning into full-stack development, bringing a mix of problem-solving skills and technical expertise to the table.`,
           },
         ].map((result, index) => (
           <div
