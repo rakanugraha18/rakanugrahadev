@@ -46,7 +46,7 @@ export default function CodeTyping({ className }: PowerShellProps) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowAnimation(true);
-    }, 5000); // Menunda animasi selama 3 detik
+    }, 1000); // Menunda animasi selama 3 detik
 
     return () => clearTimeout(timeout);
   }, []);
@@ -74,81 +74,83 @@ export default function CodeTyping({ className }: PowerShellProps) {
 
   return (
     <div className={`lg:relative lg:max-w-[600px] my-5 ${className}`}>
-      <WindowCard
-        height="full"
-        width="full"
-        label="Terminal"
-        className="relative lg:m-0 max-w-[600px] font-mono text-xs sm:text-sm lg:pb-0"
-        theme="light"
-      >
-        <WindowHeader className="h-full justify-between">
-          <div className="flex items-center">
-            <div>
-              <img
-                src="imgs/notepad.png"
-                className="w-6 h-6 p-0.5 mx-2"
-                alt=""
+      {showAnimation && (
+        <WindowCard
+          height="full"
+          width="full"
+          label="Terminal"
+          className="relative lg:m-0 max-w-[600px] font-mono text-xs sm:text-sm lg:pb-0"
+          theme="light"
+        >
+          <WindowHeader className="h-full justify-between">
+            <div className="flex items-center">
+              <div>
+                <img
+                  src="imgs/notepad.png"
+                  className="w-6 h-6 p-0.5 mx-2"
+                  alt=""
+                />
+              </div>
+              <WindowTab
+                className="text-xs text-black bg-white"
+                width="full"
+                height="full"
+                label="..\RakaNugraha\index.tsx"
               />
             </div>
-            <WindowTab
-              className="text-xs text-black bg-white"
-              width="full"
-              height="full"
-              label="..\RakaNugraha\index.tsx"
-            />
-          </div>
-          <WindowButton className="text-white" />
-        </WindowHeader>
+            <WindowButton className="text-white" />
+          </WindowHeader>
 
-        {/* Code Highlighting Section */}
-        <div className="space-y-2 text-gray-800 text-left pb-2">
-          <AnimatePresence>
-            <Highlight
-              {...defaultProps}
-              code={displayedLines.join("\n")}
-              language="tsx"
-            >
-              {({ tokens, getLineProps, getTokenProps }) => (
-                <>
-                  {tokens.map((line, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      {...getLineProps({ line })}
-                      className="flex"
-                    >
-                      <span className="mr-4 select-none opacity-50 w-6 text-right">
-                        {i + 1}
-                      </span>
-                      <span
-                        className="relative flex-1"
-                        style={{ whiteSpace: "pre-wrap" }}
+          {/* Code Highlighting Section */}
+          <div className="space-y-2 text-gray-800 text-left pb-2">
+            <AnimatePresence>
+              <Highlight
+                {...defaultProps}
+                code={displayedLines.join("\n")}
+                language="tsx"
+              >
+                {({ tokens, getLineProps, getTokenProps }) => (
+                  <>
+                    {tokens.map((line, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        {...getLineProps({ line })}
+                        className="flex"
                       >
-                        {line.map((token, key) => (
-                          <span key={key} {...getTokenProps({ token })} />
-                        ))}
-                        {i === currentLine && (
-                          <motion.span
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: [0, 1, 1, 0] }}
-                            transition={{ repeat: Infinity, duration: 0.5 }}
-                            className="absolute inline-block h-[1.2em] w-[2px] bg-white"
-                            style={{
-                              left: `${cursorPosition * 0.6}em`,
-                              top: 0,
-                            }}
-                          />
-                        )}
-                      </span>
-                    </motion.div>
-                  ))}
-                </>
-              )}
-            </Highlight>
-          </AnimatePresence>
-        </div>
-      </WindowCard>
+                        <span className="mr-4 select-none opacity-50 w-6 text-right">
+                          {i + 1}
+                        </span>
+                        <span
+                          className="relative flex-1"
+                          style={{ whiteSpace: "pre-wrap" }}
+                        >
+                          {line.map((token, key) => (
+                            <span key={key} {...getTokenProps({ token })} />
+                          ))}
+                          {i === currentLine && (
+                            <motion.span
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: [0, 1, 1, 0] }}
+                              transition={{ repeat: Infinity, duration: 0.5 }}
+                              className="absolute inline-block h-[1.2em] w-[2px] bg-white"
+                              style={{
+                                left: `${cursorPosition * 0.6}em`,
+                                top: 0,
+                              }}
+                            />
+                          )}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </>
+                )}
+              </Highlight>
+            </AnimatePresence>
+          </div>
+        </WindowCard>
+      )}
     </div>
   );
 }

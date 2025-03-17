@@ -28,7 +28,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body className=" text-white font-mono">
         <Navbar />
         <Sidebar />
-        <main>{children}</main>
+        <main>
+          {loading ? (
+            <div className="flex items-center justify-center h-screen">
+              <p className="text-xl animate-pulse">Loading...</p>
+            </div>
+          ) : (
+            children
+          )}
+        </main>
       </body>
     </html>
   );

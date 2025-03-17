@@ -10,8 +10,6 @@ interface WindowCardProps {
 export default function WindowCard({
   width = "full",
   height = "full",
-  label = "Tab",
-  logo,
   theme = "dark",
   children,
   className,
