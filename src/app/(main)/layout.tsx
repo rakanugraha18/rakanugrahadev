@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { usePathname } from "next/navigation";
 import Sidebar from "@/components/layout/Sidebar";
+import LoadingScreen from "@/components/loadingScreen";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
@@ -28,15 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body className=" text-white font-mono">
         <Navbar />
         <Sidebar />
-        <main>
-          {loading ? (
-            <div className="flex items-center justify-center h-screen">
-              <p className="text-xl animate-pulse">Loading...</p>
-            </div>
-          ) : (
-            children
-          )}
-        </main>
+        <main>{loading ? <LoadingScreen /> : children}</main>
       </body>
     </html>
   );
