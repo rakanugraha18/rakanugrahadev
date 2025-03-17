@@ -23,8 +23,6 @@ const QUICK_OPTIONS = [
   },
 ];
 
-const API_URL = `${process.env.NEXT_PUBLIC_RAKABACKEND_URL}/api/groq/chat`;
-
 export default function Chat() {
   const [messages, setMessages] = useState<{ role: string; content: string }[]>(
     [
@@ -63,6 +61,7 @@ export default function Chat() {
         { role: "assistant", content: data.response },
       ]);
     } catch (error) {
+      console.error(error);
       setMessages((prev) => [
         ...prev,
         {
