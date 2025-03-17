@@ -111,7 +111,13 @@ export default function Navbar() {
           </Link>
         ))}
         <Link href="#contact">
-          <div className="py-2 px-5 flex space-x-2 bg-[#00423b]">
+          <div
+            className={`py-2 px-5 flex space-x-2 bg-[#00423b] ${
+              activeTab
+                ? "underline underline-offset-8 text-[#14b8a6] bg-[#00423b]"
+                : " hover:underline underline-offset-8"
+            }`}
+          >
             <Send size={18} />
             <span>Contact</span>
           </div>

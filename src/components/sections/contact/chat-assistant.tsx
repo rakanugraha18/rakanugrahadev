@@ -60,6 +60,7 @@ export default function Chat() {
         { role: "assistant", content: data.response },
       ]);
     } catch (error) {
+      console.error("Fetch error:", error); // Menampilkan error di console
       setMessages((prev) => [
         ...prev,
         {
