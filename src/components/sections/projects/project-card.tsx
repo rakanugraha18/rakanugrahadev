@@ -26,7 +26,7 @@ export default function ProjectCard({ project }: props) {
         height="full"
         label="About"
         theme="light"
-        className="mt-12 lg:h-full lg:w-full lg:mt-0 font-mono min-w-[324px] max-[400px]:text-[0.6rem] text-xs lg:pb-0 relative"
+        className="mt-12 lg:h-screen lg:w-[600px] lg:mt-0 font-mono min-w-[324px] max-[400px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0 relative"
       >
         <WindowHeader className="h-full justify-between">
           <WindowTab
@@ -38,7 +38,7 @@ export default function ProjectCard({ project }: props) {
           <WindowButton className="text-white" />
         </WindowHeader>
         <WindowUrl urlBrowser={project.previewLink} />
-        <div className="p-4 group relative  lg:h-full overflow-hidden cursor-pointer rounded-lg m-2 border">
+        <div className="p-4 group relative  lg:h-[600px] overflow-hidden cursor-pointer rounded-lg m-2 border">
           <h2 className="text-xl capitalize font-bold my-3">{project.title}</h2>
           <p className="text-muted-foreground overflow-hidden whitespace-pre-line mb-2">
             {project.description}

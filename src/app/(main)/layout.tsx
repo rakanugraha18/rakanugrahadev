@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import { usePathname } from "next/navigation";
 import Sidebar from "@/components/layout/Sidebar";
+import Footer from "@/components/layout/Footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
@@ -37,6 +38,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             children
           )}
         </main>
+        <Footer />
       </body>
     </html>
   );

@@ -37,7 +37,7 @@ export default function ProjectsSection() {
           </p>
         </div>
       </div>
-      <div className="space-y-[20vh]">
+      <div className="space-y-[10vh]">
         {data.projects.projects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
