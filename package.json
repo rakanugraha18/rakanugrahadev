@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "@radix-ui/themes": "^3.2.1",
+    "axios": "^1.8.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
     "framer-motion": "^12.4.10",
+    "lodash": "^4.17.21",
+    "lodash.debounce": "^4.0.8",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.479.0",
     "next": "15.2.1",
@@ -22,12 +26,14 @@
     "react-icon": "^1.0.0",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
+    "react-markdown": "^10.1.0",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/lodash": "^4.17.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

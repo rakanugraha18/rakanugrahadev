@@ -66,7 +66,7 @@ export default function Navbar() {
         </div>
 
         {/* Contact (Desktop) */}
-        <Link href="/contact">
+        <Link href="#contact">
           <div className="py-3 space-x-2 hidden lg:flex items-center">
             <Send size={18} />
             <span>Contact</span>
@@ -110,7 +110,7 @@ export default function Navbar() {
             </div>
           </Link>
         ))}
-        <Link href="/contact">
+        <Link href="#contact">
           <div className="py-2 px-5 flex space-x-2 bg-[#00423b]">
             <Send size={18} />
             <span>Contact</span>
