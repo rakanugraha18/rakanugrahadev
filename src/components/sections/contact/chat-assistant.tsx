@@ -46,11 +46,14 @@ export default function Chat() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
-      });
+      const response = await fetch(
+        "https://rakadevbackend.onrender.com/api/groq/chat",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message }),
+        }
+      );
 
       if (!response.ok) throw new Error("Terjadi kesalahan.");
 
@@ -60,7 +63,6 @@ export default function Chat() {
         { role: "assistant", content: data.response },
       ]);
     } catch (error) {
-      console.error("Fetch error:", error); // Menampilkan error di console
       setMessages((prev) => [
         ...prev,
         {

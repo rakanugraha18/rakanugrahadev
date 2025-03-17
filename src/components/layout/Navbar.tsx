@@ -113,7 +113,7 @@ export default function Navbar() {
         <Link href="#contact">
           <div
             className={`py-2 px-5 flex space-x-2 bg-[#00423b] ${
-              activeTab
+              activeTab === "Contact"
                 ? "underline underline-offset-8 text-[#14b8a6] bg-[#00423b]"
                 : " hover:underline underline-offset-8"
             }`}
