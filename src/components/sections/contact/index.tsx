@@ -11,7 +11,7 @@ export default function ContactSection() {
     <section
       ref={ref}
       id="contact"
-      className="lg:h-full items-center lg:w-full lg:mt-8 lg:mb-32 flex flex-col lg:flex-row lg:gap-11 lg:justify-around h-full w-screen"
+      className="lg:h-full items-center lg:w-full lg:mt-8 lg:mb-32 flex flex-col lg:flex-row lg:gap-11 lg:justify-around h-full "
     >
       <ChatCard />
       <ContactCard />

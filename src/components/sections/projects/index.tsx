@@ -15,10 +15,10 @@ export default function ProjectsSection() {
     <section
       ref={ref}
       id="projects"
-      className="w-full bg-[#00423b] p-6 flex justify-between flex-col items-center lg:flex-row lg:items-stretch gap-20 my-8 lg:my-32 text-sm md:text-base lg:min-w-[600px] min-w-screen"
+      className="w-full bg-[#00423b] p-6 flex justify-between flex-col items-center lg:flex-row lg:items-stretch gap-20 my-8 lg:my-32 text-sm md:text-base lg:min-w-[600px]"
     >
       <div>
-        <div className="sticky top-[100px] text-center md:text-left">
+        <div className="sticky top-24 text-center md:text-left">
           {/* grid image behind */}
           <Image
             className="absolute -top-4 -left-5 -z-10 text-transparent opacity-30 w-full h-1/2 object-cover"

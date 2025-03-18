@@ -16,7 +16,8 @@ interface PowerShellProps {
 }
 
 const codeSnippet = `// Welcome to my AI-Powered Portfolio! 🚀
-import { NextDeveloper, ExpressDeveloper } from 'rakanugraha';
+import { NextDev } from 'rakanugraha';
+import { ExpressDev } from 'rakanugraha';
 import { AIExpertise } from '@/skills';
 
 function createAmazingWebsite() {

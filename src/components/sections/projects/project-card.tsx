@@ -21,7 +21,7 @@ type props = {
 
 export default function ProjectCard({ project }: props) {
   return (
-    <div className="sticky top-[100px]">
+    <div className="sticky top-24">
       <WindowCard
         height="full"
         label="About"
