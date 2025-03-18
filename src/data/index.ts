@@ -1,28 +1,28 @@
-import { Github, Linkedin, Youtube } from "lucide-react";
+import { GithubIcon, Linkedin, Instagram } from "lucide-react";
 
 const data = {
   home: {
-    name: "Aga Kadela",
+    name: "Raka Nugraha",
     description:
-      "I Fix, Optimize & Build #Next_js & #React Apps - Powered by #AI", // # -> for css style, _ -> create space, __ -> creates dash
+      "I Optimize & Build Fullstack {Next.js} & {Expressjs} Apps - Powered by {AI}", // # -> for css style, _ -> create space, __ -> creates dash
     cvLink: "#contact",
   },
   sidebar: {
     links: [
       {
         name: "github",
-        link: "https://github.com/agakadela",
-        icon: Github,
+        link: "https://github.com/rakanugraha18",
+        icon: GithubIcon,
       },
       {
         name: "linkedin",
-        link: "https://www.linkedin.com/in/agakadela/",
+        link: "https://www.linkedin.com/in/rakanugraha",
         icon: Linkedin,
       },
       {
-        name: "youtube",
-        link: "https://www.youtube.com/@agakadela",
-        icon: Youtube,
+        name: "Instagram",
+        link: "https://www.instagram.com/@rakajnugraha",
+        icon: Instagram,
       },
     ],
   },
@@ -109,48 +109,30 @@ const data = {
       },
       {
         id: 8,
-        name: "postgresql",
-        src: "/skills/postgresql.svg",
-        link: "https://en.wikipedia.org/wiki/PostgreSQL",
-      },
-      {
-        id: 9,
         name: "vitejs",
         src: "/skills/vitejs.svg",
         link: "https://en.wikipedia.org/wiki/Vite_(software)",
       },
       {
-        id: 10,
+        id: 9,
         name: "git",
         src: "/skills/git.svg",
         link: "https://en.wikipedia.org/wiki/Git",
       },
       {
-        id: 11,
-        name: "docker",
-        src: "/skills/docker.svg",
-        link: "https://en.wikipedia.org/wiki/Docker_(software)",
-      },
-      {
-        id: 12,
+        id: 10,
         name: "figma",
         src: "/skills/figma.svg",
         link: "https://en.wikipedia.org/wiki/Figma",
       },
       {
-        id: 13,
+        id: 11,
         name: "firebase",
         src: "/skills/firebase.svg",
         link: "https://en.wikipedia.org/wiki/Firebase",
       },
       {
-        id: 14,
-        name: "markdown",
-        src: "/skills/markdown.svg",
-        link: "https://en.wikipedia.org/wiki/Markdown",
-      },
-      {
-        id: 15,
+        id: 12,
         name: "mongoDB",
         src: "/skills/mongoDB.svg",
         link: "https://en.wikipedia.org/wiki/MongoDB",
@@ -158,8 +140,8 @@ const data = {
     ],
   },
   contact: {
-    email: "aga.kadela.dev@gmail.com",
-    name: "Aga Kadela",
+    email: "rakanugraha2@gmail.com",
+    name: "Raka Nugraha",
   },
 };
 

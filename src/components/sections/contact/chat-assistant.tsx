@@ -89,7 +89,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="lg:w-full min-h-[500px] max-h-[500px] lg:max-h-[650px] lg:h-[580px] justify-between flex flex-col">
+    <div className="lg:w-full min-h-[500px] max-h-[500px] lg:max-h-[650px] lg:h-[580px] justify-between flex flex-col mt-1 ml-1">
       {/* Chat Messages */}
       <div className="flex-1 overflow-y-auto lg:p-4 space-y-4 text-sm w-full">
         {messages.map((msg, i) => (
@@ -190,7 +190,7 @@ export default function Chat() {
         <button
           type="submit"
           disabled={isLoading || !input.trim()}
-          className="p-2 rounded-lg bg-primary text-primary-foreground"
+          className="p-2 rounded-lg bg-[#00423b] text-white"
         >
           <Send size={20} />
         </button>

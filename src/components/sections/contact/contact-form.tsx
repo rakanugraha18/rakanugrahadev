@@ -70,7 +70,11 @@ export default function ContactForm() {
         value={formData.message}
         onChange={handleChange}
       />
-      <Button className="text-white" type="submit" disabled={isSubmitting}>
+      <Button
+        className="bg-[#00423b] text-white"
+        type="submit"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? "Sending..." : "Submit"}
       </Button>
     </form>
