@@ -16,7 +16,7 @@ export default function GoogleSearchWindow() {
         setSearchText(text.slice(0, index));
         index++;
         if (index > text.length) clearInterval(interval);
-      }, 1000);
+      }, 100);
     }
   }, [inView]);
 
@@ -24,7 +24,7 @@ export default function GoogleSearchWindow() {
     <div ref={ref} className="w-full mx-auto text-black">
       {/* Header Google */}
       <div className="p-4 flex flex-col items-start">
-        <div className="flex items-center w-full max-w-2xl space-x-3 relative ">
+        <div className="flex items-center w-full space-x-3 relative ">
           <img
             src="/imgs/google.png"
             alt="google"

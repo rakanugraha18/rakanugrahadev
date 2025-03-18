@@ -4,21 +4,11 @@ import WindowCard from "@/components/ui/window/windowCard";
 import WindowTab from "@/components/ui/window/windowTab";
 import WindowHeader from "@/components/ui/window/windowHeader";
 import WindowButton from "@/components/ui/window/windowButton";
-import { useEffect, useState } from "react";
 import ChatAssistant from "./chat-assistant";
 
 export default function ChatCard() {
-  const [showAnimation, setShowAnimation] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowAnimation(true);
-    }, 3000);
-
-    return () => clearTimeout(timeout);
-  }, []);
   return (
-    <div className="mx-2 lg:h-[650px] lg:w-[600px] max-h-[500px] lg:max-h-[650px] my-8">
+    <div className="lg:h-[650px] lg:w-[600px] lg:max-h-[650px] min-w-screen lg:min-w-[600px] lg:min-h-[650px] p-6 ">
       {/* Animasi kemunculan WindowCard dan turunannya */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -29,7 +19,7 @@ export default function ChatCard() {
           label="Contact"
           width="full"
           theme="light"
-          className="font-mono max-[700px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0  max-h-[650px] lg:min-h-[650px] mb-2"
+          className="font-mono max-[700px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0 lg:min-h-[650px]"
         >
           <WindowHeader className="h-full justify-between">
             <motion.div
@@ -53,17 +43,7 @@ export default function ChatCard() {
               <WindowButton className="text-xs ml-6 text-white" />
             </motion.div>
           </WindowHeader>
-          <div className="w-full h-full relative gap-4 items-start z-10">
-            {showAnimation && (
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <ChatAssistant />
-              </motion.div>
-            )}
-          </div>
+          <ChatAssistant />
         </WindowCard>
       </motion.div>
     </div>

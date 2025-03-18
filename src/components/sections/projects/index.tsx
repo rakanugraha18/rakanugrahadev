@@ -15,7 +15,7 @@ export default function ProjectsSection() {
     <section
       ref={ref}
       id="projects"
-      className="w-full bg-[#00423b] p-6 flex justify-between flex-col items-center lg:flex-row lg:items-stretch gap-20 my-8 lg:my-32 text-sm md:text-base"
+      className="w-full bg-[#00423b] p-6 flex justify-between flex-col items-center lg:flex-row lg:items-stretch gap-20 my-8 lg:my-32 text-sm md:text-base lg:min-w-[600px] min-w-screen"
     >
       <div>
         <div className="sticky top-[100px] text-center md:text-left">

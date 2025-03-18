@@ -42,7 +42,7 @@ export default function AboutSection() {
             height="full"
             label="About"
             theme="light"
-            className="mt-6 lg:h-screen lg:mt-0 font-mono min-w-[324px] lg:w-1/3 max-[400px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0 relative"
+            className="mt-6 lg:h-screen lg:mt-0 font-mono min-w-[324px] max-[400px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0 relative"
           >
             <WindowHeader className="h-full justify-between">
               <WindowTab
