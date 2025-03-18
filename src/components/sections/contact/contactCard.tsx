@@ -18,7 +18,7 @@ export default function ContactCard() {
     return () => clearTimeout(timeout);
   }, []);
   return (
-    <div className="mx-2 lg:h-[650px] lg:w-[600px] max-h-[500px] lg:max-h-[650px] lg:my-8 min-w-[324px] lg:min-h-[650px]">
+    <div className="mx-2 lg:h-[650px] lg:w-[600px] max-h-[500px] lg:max-h-[650px] lg:my-8 min-w-[324px] lg:min-h-[650px] my-8">
       {/* Animasi kemunculan WindowCard dan turunannya */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}

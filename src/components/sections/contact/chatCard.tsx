@@ -29,7 +29,7 @@ export default function ChatCard() {
           label="Contact"
           width="full"
           theme="light"
-          className="font-mono max-[700px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0 relative lg:min-h-[650px]"
+          className="font-mono max-[700px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0  max-h-[650px] lg:min-h-[650px] mb-2"
         >
           <WindowHeader className="h-full justify-between">
             <motion.div
