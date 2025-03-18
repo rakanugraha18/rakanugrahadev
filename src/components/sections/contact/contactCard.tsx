@@ -5,9 +5,9 @@ import WindowTab from "@/components/ui/window/windowTab";
 import WindowHeader from "@/components/ui/window/windowHeader";
 import WindowButton from "@/components/ui/window/windowButton";
 import { useEffect, useState } from "react";
-import ChatAssistant from "./chat-assistant";
+import ContactForm from "./contact-form";
 
-export default function ChatCard() {
+export default function ContactCard() {
   const [showAnimation, setShowAnimation] = useState(false);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function ChatCard() {
     return () => clearTimeout(timeout);
   }, []);
   return (
-    <div className="mx-2 lg:h-[650px] lg:w-[600px] max-h-[500px] lg:max-h-[650px] my-8">
+    <div className="mx-2 lg:h-[650px] lg:w-[600px] max-h-[500px] lg:max-h-[650px] lg:my-8 min-w-[324px] lg:min-h-[650px]">
       {/* Animasi kemunculan WindowCard dan turunannya */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -41,8 +41,8 @@ export default function ChatCard() {
                 className="text-xs ml-6 text-black bg-white"
                 width="full"
                 height="full"
-                label="Chat with AI Raka"
-                logo="imgs/ai-bot.png"
+                label="Sent email to Raka"
+                logo="imgs/globe.png"
               />
             </motion.div>
             <motion.div
@@ -60,7 +60,7 @@ export default function ChatCard() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <ChatAssistant />
+                <ContactForm />
               </motion.div>
             )}
           </div>
