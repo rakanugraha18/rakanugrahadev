@@ -4,12 +4,14 @@ const firaCode = Fira_Code({ subsets: ["latin"] });
 
 interface CmdButtonProps {
   label: string;
+  href?: string;
   onClick?: () => void;
   theme?: "light" | "dark";
 }
 
 export default function CmdButton({
   label,
+  href,
   onClick,
   theme = "dark",
 }: CmdButtonProps) {
@@ -31,7 +33,7 @@ export default function CmdButton({
         imageRendering: "pixelated",
       }}
     >
-      {label}
+      <a href={href}>{label}</a>
     </button>
   );
 }

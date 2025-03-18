@@ -20,7 +20,7 @@ export default function WindowImage() {
 
       <div className="flex flex-wrap">
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/xiaomi-phone-e544c.appspot.com/o/Raka%2FProfile%2Fraka-bg.png?alt=media&amp;token=4c1025e9-a764-49a7-8f5c-00165258162a"
+          src="/imgs/raka-bg.png"
           alt="Raka Nugraha"
           className="max-w-300px] mx-auto flex p-1.5"
         />

@@ -41,8 +41,8 @@ export default function ChatCard() {
                 className="text-xs ml-6 text-black bg-white"
                 width="full"
                 height="full"
-                label="C:\Fullstack\RakaNugraha>"
-                logo="imgs/powershell.png"
+                label="Chat with AI Raka"
+                logo="imgs/ai-bot.png"
               />
             </motion.div>
             <motion.div

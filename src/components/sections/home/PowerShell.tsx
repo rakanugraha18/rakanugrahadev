@@ -68,7 +68,6 @@ export default function PowerShell({ className }: PowerShellProps) {
     <div
       className={`p-4 m-2 mb-4 lg:mb-0 rounded-lg text-lg  max-[400px]:text-[0.6rem]  ${className}`}
     >
-      <p className="mb-2">RakaNugraha Terminal (C) All rights reserved.</p>
       <p className="mb-4">
         Explore my projects, AI-powered tools, and latest innovations!{" "}
         <a href="https://rakanugraha.dev" className="underline">
@@ -93,7 +92,7 @@ export default function PowerShell({ className }: PowerShellProps) {
       {showProfile && (
         <div className="mt-4 text-md font-bold">
           <p className="text-md">{`Hello 👋, I'm`}</p>
-          <p className={`text-6xl text-[#14b8a6] ${firaCode.className}`}>
+          <p className={`text-6xl mb-1 text-[#14b8a6] ${firaCode.className}`}>
             Raka Nugraha
           </p>
           <p>
@@ -115,8 +114,8 @@ export default function PowerShell({ className }: PowerShellProps) {
       {/* Tampilkan Button */}
       {showButton && (
         <div className="pr-4 py-3 mt-4 gap-3 flex lg:justify-start justify-center lg:mt-6 lg:mb-6">
-          <CmdButton label="See My work" />
-          <CmdButton theme="light" label="Contact me" />
+          <CmdButton label="See My work" href="#projects" />
+          <CmdButton theme="light" label="Contact me" href="#contact" />
         </div>
       )}
     </div>

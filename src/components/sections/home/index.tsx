@@ -37,7 +37,7 @@ export default function HomeSection() {
         <WindowCard
           width="full"
           label="PowerShell"
-          className="font-mono min-md:h-screen lg:min-h-[80vh] max-[400px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0 relative"
+          className="font-mono min-md:h-screen min-h-[80vh] lg:min-h-[80vh] max-[400px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0 relative"
         >
           <WindowHeader className="h-full justify-between">
             <motion.div
@@ -75,7 +75,7 @@ export default function HomeSection() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <CodeTyping className="hidden lg:block lg:mb-72" />
+                <CodeTyping className="hidden lg:block lg:mb-20" />
               </motion.div>
             )}
           </div>

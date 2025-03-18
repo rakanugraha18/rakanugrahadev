@@ -4,14 +4,25 @@ import WindowButton from "@/components/ui/window/windowButton";
 import WindowCard from "@/components/ui/window/windowCard";
 import WindowHeader from "@/components/ui/window/windowHeader";
 import WindowTab from "@/components/ui/window/windowTab";
-import { useRef } from "react";
+import { useEffect, useState } from "react";
 import WindowChrome from "./windowChrome";
 import WindowUrl from "@/components/ui/window/windowUrl";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import WindowImage from "./windowImage";
+
 export default function AboutSection() {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  useEffect(() => {
+    if (inView) {
+      const timeout = setTimeout(() => {
+        setShowAnimation(true);
+      }, 100);
+      return () => clearTimeout(timeout);
+    }
+  }, [inView]);
 
   return (
     <section
@@ -19,7 +30,8 @@ export default function AboutSection() {
       ref={ref}
       className="relative overflow-hidden flex-wrap lg:flex gap-6 lg:my-32 lg:mt-20 "
     >
-      <WindowImage className="p-4 mb-2" />
+      {/* Animasi kemunculan WindowCard dan turunannya */}
+      {showAnimation && <WindowImage className="p-4 mb-2" />}
       <div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}

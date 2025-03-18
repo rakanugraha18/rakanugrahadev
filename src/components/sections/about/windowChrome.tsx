@@ -16,7 +16,7 @@ export default function GoogleSearchWindow() {
         setSearchText(text.slice(0, index));
         index++;
         if (index > text.length) clearInterval(interval);
-      }, 150);
+      }, 1000);
     }
   }, [inView]);
 
