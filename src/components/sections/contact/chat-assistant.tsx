@@ -9,19 +9,19 @@ import { motion } from "framer-motion";
 const QUICK_OPTIONS = [
   {
     text: "👩‍💻 Skills & Experience",
-    message: "Apa keahlian dan pengalaman Raka?",
+    message: "What are Raka's skills and experience?",
   },
   {
     text: "🚀 Project Collaboration",
-    message: "Bagaimana cara kerja sama dengan Raka dalam proyek?",
+    message: "How can I collaborate with Raka on a project?",
   },
   {
     text: "💼 Past Projects",
-    message: "Bisa kasih tahu beberapa proyek yang pernah dikerjakan Raka?",
+    message: "Can you share some projects Raka has worked on?",
   },
   {
     text: "⚡ AI Integration",
-    message: "Apa saja fitur AI yang bisa diterapkan Raka dalam proyek?",
+    message: "What AI features can Raka implement in a project?",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function Chat() {
     [
       {
         role: "assistant",
-        content: "Hi! Saya AI Chatbot. Apa yang ingin kamu tanyakan?",
+        content: "Hi! I'm an AI Chatbot. What would you like to ask?",
       },
     ]
   );
@@ -54,12 +54,16 @@ export default function Chat() {
         body: JSON.stringify({ message }),
       });
 
-      if (!response.ok) throw new Error("Terjadi kesalahan.");
+      if (!response.ok) throw new Error("An error occurred.");
 
       const data = await response.json();
+      const fixNumbering = (text: string) => {
+        let count = 0;
+        return text.replace(/^\d+\./gm, () => `${++count}.`);
+      };
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: data.response },
+        { role: "assistant", content: fixNumbering(data.response) },
       ]);
     } catch (error) {
       console.error(error);
@@ -67,7 +71,7 @@ export default function Chat() {
         ...prev,
         {
           role: "assistant",
-          content: "Error: Tidak dapat menghubungi server.",
+          content: "Error: Unable to connect to the server.",
         },
       ]);
     } finally {
@@ -80,7 +84,6 @@ export default function Chat() {
     message: string;
   }) => {
     sendMessage(option.message);
-    setQuickOptionsVisible(false);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -120,7 +123,7 @@ export default function Chat() {
                     <ul className="list-disc ml-4 mb-2">{children}</ul>
                   ),
                   ol: ({ children }) => (
-                    <ol className="list-decimal ml-4 mb-2">{children}</ol>
+                    <ol className="custom-ol ml-4 mb-2">{children}</ol>
                   ),
                   li: ({ children }) => <li className="mb-1">{children}</li>,
                   strong: ({ children }) => (
@@ -146,6 +149,7 @@ export default function Chat() {
               >
                 {msg.content}
               </ReactMarkdown>
+
               {i === 0 && quickOptionsVisible && (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -183,8 +187,8 @@ export default function Chat() {
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Tanyakan tentang Raka..."
-          className="flex-1 bg-background rounded-lg px-4 py-2 border text-sm lg:text-lg"
+          placeholder="Ask about Raka..."
+          className="flex-1 bg-background rounded-lg px-4 py-2 border text-sm lg:text-md"
           disabled={isLoading}
         />
         <button

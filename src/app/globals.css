@@ -20,6 +20,25 @@ section {
   @apply bg-[#00423b] text-[#ffffff] mx-2.5 font-mono lg:max-w-screen-2xl lg:mx-auto;
 }
 
+@layer utilities {
+  .custom-ol {
+    counter-reset: list-counter;
+  }
+
+  .custom-ol > li {
+    counter-increment: list-counter;
+    position: relative;
+    list-style: none;
+  }
+
+  .custom-ol > li::before {
+    content: counter(list-counter) ". ";
+    font-weight: bold;
+    position: absolute;
+    left: -1.5rem; /* Sesuaikan sesuai kebutuhan */
+  }
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
