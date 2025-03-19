@@ -1,4 +1,4 @@
-[text](../../../Portfolio/my-website/LICENSE)# AI-Powered Portfolio Website
+# AI-Powered Portfolio Website
 
 A modern, interactive portfolio website built with Next.js, React, and TypeScript, featuring AI-powered components and smooth animations. The site includes an intelligent chat assistant powered by Google's Gemini AI model.
 
