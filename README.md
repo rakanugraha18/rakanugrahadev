@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website built with Next.js, React, and TypeScript, featuring AI-powered components and smooth animations. The site includes an intelligent chat assistant powered by Google's Gemini AI model.
 
-![Website Screenshot](public/imgs/website.png)
+![Website Screenshot](public/imgs/website.jpg)
 
 ## Features
 
