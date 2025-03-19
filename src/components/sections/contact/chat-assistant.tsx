@@ -1,10 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import { Send, User } from "lucide-react";
+import { useEffect, useState } from "react";
+import { AlertCircle, Send, Trash2, User } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { motion } from "framer-motion";
+
+type ConfirmClearState = {
+  show: boolean;
+  timeoutId?: NodeJS.Timeout;
+};
+
+type Message = {
+  role: "assistant" | "user";
+  content: string;
+};
 
 const QUICK_OPTIONS = [
   {
@@ -26,17 +36,19 @@ const QUICK_OPTIONS = [
 ];
 
 export default function Chat() {
-  const [messages, setMessages] = useState<{ role: string; content: string }[]>(
-    [
-      {
-        role: "assistant",
-        content: "Hi! I'm an AI Chatbot. What would you like to ask?",
-      },
-    ]
-  );
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      role: "assistant",
+      content:
+        "Hi! I'm Raka's AI Chatbot. I can help you learn more about his skills, experience, or how he can help with your project. What would you like to know?",
+    },
+  ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [quickOptionsVisible, setQuickOptionsVisible] = useState(true);
+  const [confirmClear, setConfirmClear] = useState<ConfirmClearState>({
+    show: false,
+  });
   const API_URL = `${process.env.NEXT_PUBLIC_RAKABACKEND_URL}/api/groq/chat`;
 
   const sendMessage = async (message: string) => {
@@ -57,13 +69,9 @@ export default function Chat() {
       if (!response.ok) throw new Error("An error occurred.");
 
       const data = await response.json();
-      const fixNumbering = (text: string) => {
-        let count = 0;
-        return text.replace(/^\d+\./gm, () => `${++count}.`);
-      };
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: fixNumbering(data.response) },
+        { role: "assistant", content: data.response },
       ]);
     } catch (error) {
       console.error(error);
@@ -86,10 +94,32 @@ export default function Chat() {
     sendMessage(option.message);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    sendMessage(input);
+  const handleClearClick = () => {
+    if (confirmClear.show) {
+      setMessages([
+        {
+          role: "assistant",
+          content:
+            "Hi! I'm Raka's AI Chatbot. I can help you learn more about his skills, experience, or how he can help with your project. What would you like to know?",
+        },
+      ]);
+      setQuickOptionsVisible(true);
+      setConfirmClear({ show: false });
+    } else {
+      const timeoutId = setTimeout(() => {
+        setConfirmClear({ show: false });
+      }, 3000);
+      setConfirmClear({ show: true, timeoutId });
+    }
   };
+
+  useEffect(() => {
+    return () => {
+      if (confirmClear.timeoutId) {
+        clearTimeout(confirmClear.timeoutId);
+      }
+    };
+  }, [confirmClear.timeoutId]);
 
   const renderers = {
     a: ({
@@ -113,7 +143,7 @@ export default function Chat() {
   return (
     <div className="lg:w-full min-h-[500px] max-h-[500px] lg:max-h-[650px] lg:h-[580px] justify-between flex flex-col mt-1 ml-1">
       {/* Chat Messages */}
-      <div className="flex-1 overflow-y-auto lg:p-4 space-y-4 text-sm w-full">
+      <div className="flex-1 overflow-y-auto lg:p-2 space-y-2 text-sm w-full">
         {messages.map((msg, i) => (
           <div
             key={i}
@@ -201,24 +231,39 @@ export default function Chat() {
           </div>
         )}
       </div>
-
-      {/* Input Form */}
-      <form onSubmit={handleSubmit} className="flex gap-2 p-4 border-t w-full">
+      <div className="flex items-center gap-2 p-4 border-t">
+        <motion.button
+          onClick={handleClearClick}
+          className={`flex items-center gap-2 px-2 py-1 rounded-md ${
+            confirmClear.show
+              ? "bg-[#16cab5] text-white  cursor-pointer"
+              : "hover:bg-red-500 bg-[#16cab5] transition-colors cursor-pointer hover:text-white "
+          }`}
+        >
+          {confirmClear.show ? (
+            <>
+              <AlertCircle size={16} />
+              <span>Confirm clear?</span>
+            </>
+          ) : (
+            <Trash2 size={24} />
+          )}
+        </motion.button>
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about Raka..."
-          className="flex-1 bg-background rounded-lg px-4 py-2 border text-sm lg:text-md"
+          className="flex-1 rounded-lg px-4 py-2 border"
           disabled={isLoading}
         />
         <button
-          type="submit"
+          onClick={() => sendMessage(input)}
           disabled={isLoading || !input.trim()}
-          className="p-2 rounded-lg bg-[#00423b] text-white"
+          className="p-2 rounded-lg bg-[#00423b] text-white cursor-pointer hover:bg-[#16cab5] transition-colors "
         >
           <Send size={20} />
         </button>
-      </form>
+      </div>
     </div>
   );
 }
