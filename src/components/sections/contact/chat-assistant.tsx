@@ -141,7 +141,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="lg:w-full min-h-[500px] max-h-[500px] lg:max-h-[650px] lg:h-[580px] justify-between flex flex-col mt-1 ml-1">
+    <div className="lg:w-full min-h-[500px] max-h-[500px] lg:max-h-[650px] lg:h-[580px] justify-between flex flex-col mt-1">
       {/* Chat Messages */}
       <div className="flex-1 overflow-y-auto lg:p-2 space-y-2 text-sm w-full">
         {messages.map((msg, i) => (
