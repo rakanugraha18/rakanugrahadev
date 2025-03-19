@@ -21,7 +21,7 @@ export default function GoogleSearchWindow() {
   }, [inView]);
 
   return (
-    <div ref={ref} className="w-full mx-auto text-black">
+    <div ref={ref} className="mx-auto text-black">
       {/* Header Google */}
       <div className="p-4 flex flex-col items-start">
         <div className="flex items-center w-full space-x-3 relative ">

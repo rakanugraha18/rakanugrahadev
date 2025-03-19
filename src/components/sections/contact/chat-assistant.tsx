@@ -30,8 +30,8 @@ const QUICK_OPTIONS = [
     message: "Can you share some projects Raka has worked on?",
   },
   {
-    text: "⚡ AI Integration",
-    message: "What AI features can Raka implement in a project?",
+    text: "📞 How to Contact and Connect",
+    message: "How can I contact raka for collaboration or inquiries?",
   },
 ];
 
@@ -237,7 +237,7 @@ export default function Chat() {
           className={`flex items-center gap-2 px-2 py-1 rounded-md ${
             confirmClear.show
               ? "bg-[#16cab5] text-white  cursor-pointer"
-              : "hover:bg-red-500 bg-[#16cab5] transition-colors cursor-pointer hover:text-white "
+              : "hover:bg-red-500 bg-[#00423b] text-white transition-colors cursor-pointer hover:text-white "
           }`}
         >
           {confirmClear.show ? (

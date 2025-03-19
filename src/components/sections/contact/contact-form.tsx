@@ -71,7 +71,7 @@ export default function ContactForm() {
         onChange={handleChange}
       />
       <Button
-        className="bg-[#00423b] text-white"
+        className="bg-[#00423b] text-white cursor-pointer hover:bg-[#16cab5]"
         type="submit"
         disabled={isSubmitting}
       >
