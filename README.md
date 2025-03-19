@@ -6,7 +6,7 @@ A modern, interactive portfolio website built with Next.js, React, and TypeScrip
 
 ## Features
 
-- 🤖 **AI Chat Assistant** - Interactive chat powered by Groq with Deepseek R1 using Expressjs please check [text](https://github.com/rakanugraha18/rakadevbackend)
+- 🤖 **AI Chat Assistant** - Interactive chat powered by Groq with Deepseek R1 using Expressjs please check [Backend API Chat with AI](https://github.com/rakanugraha18/rakadevbackend)
 - 🚀 **Interactive Code Typing Animation** - Dynamic code display with syntax highlighting
 - 💻 **Responsive Design** - Optimized for all devices from mobile to desktop
 - 🎨 **Modern UI/UX** - Clean, professional interface with smooth animations
@@ -56,8 +56,8 @@ A modern, interactive portfolio website built with Next.js, React, and TypeScrip
    NEXT_PUBLIC_RAKABACKEND_URL=your_backend_api_url
    ```
 
-   Note: This app have a backend api for chat with AI, if you want to use gemini please check aga kadela repository [text](https://github.com/agakadela/my-website)
-   But if you want to follow me, you have to deploy backend using expressjs [text](https://github.com/rakanugraha18/rakadevbackend)
+   Note: This app have a backend api for chat with AI, if you want to use gemini please check aga kadela repository [Aga kadela Repository](https://github.com/agakadela/my-website)
+   But if you want to follow me, you have to deploy backend using expressjs [Backend API Chat with AI](https://github.com/rakanugraha18/rakadevbackend)
 
 4. **Start the development server**
    ```bash
