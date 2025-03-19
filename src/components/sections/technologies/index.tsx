@@ -22,7 +22,7 @@ export default function Technologies() {
               key={skill.name}
               href={skill.link}
               target="_blank"
-              className=" border border-[#14b8a6] size-[70px] md:size-[90px] flex items-center justify-center rounded-full overflow-hidden p-6 flex-shrink-0 hover:bg-border"
+              className=" border border-[#14b8a6] size-[70px] md:size-[90px] flex items-center justify-center rounded-full overflow-hidden p-6 flex-shrink-0 hover:bg-[#14b8a6]  hover:border-[#00423b]"
             >
               <Image
                 className="h-full w-auto"
