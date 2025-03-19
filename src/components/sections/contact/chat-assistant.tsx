@@ -91,6 +91,25 @@ export default function Chat() {
     sendMessage(input);
   };
 
+  const renderers = {
+    a: ({
+      href = "#",
+      children,
+    }: {
+      href?: string;
+      children?: React.ReactNode; // Make children optional
+    }) => (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-[#16cab5] text-black px-3 py-1 rounded-md font-semibold hover:bg-[#00423b] hover:text-white transition"
+      >
+        {children}
+      </a>
+    ),
+  };
+
   return (
     <div className="lg:w-full min-h-[500px] max-h-[500px] lg:max-h-[650px] lg:h-[580px] justify-between flex flex-col mt-1 ml-1">
       {/* Chat Messages */}
@@ -116,6 +135,7 @@ export default function Chat() {
             >
               <ReactMarkdown
                 components={{
+                  a: renderers.a, // Gunakan custom renderer untuk link
                   p: ({ children }) => (
                     <p className="mb-2 last:mb-0">{children}</p>
                   ),

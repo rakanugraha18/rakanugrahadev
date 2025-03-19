@@ -22,20 +22,26 @@ section {
 
 @layer utilities {
   .custom-ol {
-    counter-reset: list-counter;
+    list-style: none; /* Menghilangkan default numbering dan bullet besar */
+    padding-left: 0;
   }
 
   .custom-ol > li {
-    counter-increment: list-counter;
     position: relative;
-    list-style: none;
+    list-style: none; /* Pastikan tidak ada numbering atau bullet besar */
   }
 
   .custom-ol > li::before {
-    content: counter(list-counter) ". ";
+    content: "🔥"; /* Ganti dengan simbol lain sesuai keinginan */
     font-weight: bold;
     position: absolute;
     left: -1.5rem; /* Sesuaikan sesuai kebutuhan */
+  }
+
+  /* Sub-list tetap menggunakan bullet */
+  .custom-ol ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
   }
 }
 
