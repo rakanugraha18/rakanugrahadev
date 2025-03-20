@@ -8,7 +8,7 @@ import ContactForm from "./contact-form";
 
 export default function ContactCard() {
   return (
-    <div className="lg:h-[650px] lg:w-[600px] lg:max-h-[650px] min-w-screen lg:min-w-[600px] lg:min-h-[650px] p-6 pb-6 mb-8">
+    <div className="lg:h-[650px] lg:w-[600px] lg:max-h-[650px] min-w-screen lg:min-w-[600px] lg:min-h-[650px] p-6 pb-6 mb-8 lg:pb-0">
       {/* Animasi kemunculan WindowCard dan turunannya */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
