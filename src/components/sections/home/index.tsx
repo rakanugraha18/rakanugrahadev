@@ -71,9 +71,9 @@ export default function HomeSection() {
             </motion.div>
             {showAnimation && (
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.5, delay: 1 }}
               >
                 <CodeTyping className="hidden lg:block lg:mb-20" />
               </motion.div>

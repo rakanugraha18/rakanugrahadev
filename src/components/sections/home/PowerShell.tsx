@@ -66,12 +66,12 @@ export default function PowerShell({ className }: PowerShellProps) {
 
   return (
     <div
-      className={`p-4 m-2 mb-4 lg:mb-0 rounded-lg text-lg  max-[400px]:text-[0.6rem]  ${className}`}
+      className={`p-4 m-2 mb-4 lg:mb-0 rounded-lg max-[400px]:text-[0.6rem] text-xs lg:text-sm ${firaCode.className}  ${className}`}
     >
       <p className="mb-4">
         Explore my projects, AI-powered tools, and latest innovations!{" "}
-        <a href="https://rakanugraha.dev" className="underline">
-          https://rakanugraha.dev
+        <a href="https://rakanugrahadev.vercel.app" className="underline">
+          https://rakanugrahadev.vercel.app
         </a>
       </p>
 

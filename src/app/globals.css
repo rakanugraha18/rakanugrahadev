@@ -14,13 +14,17 @@ body {
   @apply bg-[#00423b] text-[#ffffff] font-mono;
 }
 main {
-  @apply bg-[#00423b] text-[#ffffff] mx-2.5 font-mono;
+  @apply bg-[#00423b] text-[#ffffff] mx-2 font-mono;
 }
 section {
   @apply bg-[#00423b] text-[#ffffff] mx-2.5 font-mono lg:max-w-screen-2xl lg:mx-auto;
 }
 
 @layer utilities {
+  .custom-a {
+    overflow-wrap: anywhere;
+  }
+
   .custom-ol {
     list-style: none; /* Menghilangkan default numbering dan bullet besar */
     padding-left: 0;

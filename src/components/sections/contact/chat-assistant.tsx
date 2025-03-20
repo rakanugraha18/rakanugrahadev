@@ -133,7 +133,7 @@ export default function Chat() {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block bg-[#16cab5] text-black px-3 py-1 rounded-md font-semibold hover:bg-[#00423b] hover:text-white transition"
+        className=" text-white px-1 text-wrap py-1 lg:py-0.5 rounded-md text-sm hover:bg-[#16cab5] hover:text-black transition custom-a"
       >
         {children}
       </a>
@@ -165,7 +165,7 @@ export default function Chat() {
             >
               <ReactMarkdown
                 components={{
-                  a: renderers.a, // Gunakan custom renderer untuk link
+                  a: renderers.a,
                   p: ({ children }) => (
                     <p className="mb-2 last:mb-0">{children}</p>
                   ),
@@ -253,7 +253,7 @@ export default function Chat() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about Raka..."
-          className="flex-1 rounded-lg px-4 py-2 border"
+          className="flex-1 rounded-lg px-4 py-2 border text-xs lg:text-sm"
           disabled={isLoading}
         />
         <button

@@ -9,7 +9,7 @@ export default function WindowNote() {
       height="full"
       label="About"
       theme="yellow"
-      className="font-mono lg:flex-1 max-[400px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0 relative shadow-md"
+      className="font-mono lg:flex-1 max-w-[400px] max-[400px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0 shadow-md mx-auto my-auto"
     >
       <WindowHeader className="h-full flex bg-amber-200 items-center justify-between relative">
         <Plus size={24} className="text-gray-600 ml-2" />

@@ -22,7 +22,7 @@ import { AIExpertise } from '@/skills';
 
 function createAmazingWebsite() {
   const mySkills = {
-    webDev: ["Next.js", "Expressjs", MongoDB],
+    webDev: ["Next.js", "Expressjs", "MongoDB"],
     aiTools: ["ChatGPT", "ML"],
     passion: "Building AI web apps"
   };
