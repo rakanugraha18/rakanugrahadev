@@ -11,7 +11,7 @@ export default function ContactSection() {
   return (
     <section className="flex flex-col items-center" ref={ref} id="contact">
       <Image
-        src="/imgs/raka-bg.png"
+        src="/imgs/logork.png"
         alt="Contact"
         width={150}
         height={150}

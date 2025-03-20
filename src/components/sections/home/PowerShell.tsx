@@ -66,9 +66,9 @@ export default function PowerShell({ className }: PowerShellProps) {
 
   return (
     <div
-      className={`p-4 m-2 mb-4 lg:mb-0 rounded-lg max-[400px]:text-[0.6rem] text-xs lg:text-sm ${firaCode.className}  ${className}`}
+      className={`px-4 lg:py-4 m-2 mb-1 lg:mb-0 rounded-lg max-[400px]:text-[0.6rem] text-xs lg:text-sm ${firaCode.className}  ${className}`}
     >
-      <p className="mb-4">
+      <p className="mb-4 hidden lg:block">
         Explore my projects, AI-powered tools, and latest innovations!{" "}
         <a href="https://rakanugrahadev.vercel.app" className="underline">
           https://rakanugrahadev.vercel.app
@@ -83,7 +83,7 @@ export default function PowerShell({ className }: PowerShellProps) {
       </div>
 
       {/* Simulasi Instalasi */}
-      <div className="bg-black text-green-400 rounded-md whitespace-pre-wrap">
+      <div className="bg-black text-green-400 rounded-md whitespace-pre-wrap lg:block hidden">
         {displayText}
         {installStep < installText.length}
       </div>
@@ -92,7 +92,9 @@ export default function PowerShell({ className }: PowerShellProps) {
       {showProfile && (
         <div className="mt-4 text-md font-bold">
           <p className="text-md">{`Hello 👋, I'm`}</p>
-          <p className={`text-6xl mb-1 text-[#14b8a6] ${firaCode.className}`}>
+          <p
+            className={`lg:text-6xl text-3xl  mb-1 text-[#14b8a6] ${firaCode.className}`}
+          >
             Raka Nugraha
           </p>
           <p>

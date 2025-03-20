@@ -80,7 +80,7 @@ export default function CodeTyping({ className }: PowerShellProps) {
           height="full"
           width="full"
           label="Terminal"
-          className="relative lg:m-0 max-w-[600px] font-mono text-xs sm:text-sm lg:pb-0"
+          className="relative lg:m-0 max-w-[600px] font-mono max-[400px]:text-[0.6rem] text-xs sm:text-sm lg:pb-0"
           theme="light"
         >
           <WindowHeader className="h-full justify-between">

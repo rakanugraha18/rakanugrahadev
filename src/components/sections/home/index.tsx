@@ -73,24 +73,14 @@ export default function HomeSection() {
               <motion.div
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
               >
-                <CodeTyping className="hidden lg:block lg:mb-20" />
+                <CodeTyping className="lg:block lg:mb-20 mx-4" />
               </motion.div>
             )}
           </div>
         </WindowCard>
       </motion.div>
-      {/* Animasi CodeTyping untuk mode mobile */}
-      {showAnimation && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1 }}
-        >
-          <CodeTyping className="lg:hidden" />
-        </motion.div>
-      )}
     </section>
   );
 }
