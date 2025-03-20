@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 export default function GoogleSearch() {
   const [searchText, setSearchText] = useState("");
+  const [showResults, setShowResults] = useState(false);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const suggestions = ["Fullstack Developer?"];
 
@@ -15,7 +16,10 @@ export default function GoogleSearch() {
       const interval = setInterval(() => {
         setSearchText(text.slice(0, index));
         index++;
-        if (index > text.length) clearInterval(interval);
+        if (index > text.length) {
+          clearInterval(interval);
+          setTimeout(() => setShowResults(true), 500); // Show results after suggestions appear
+        }
       }, 100);
     }
   }, [inView]);
@@ -23,7 +27,7 @@ export default function GoogleSearch() {
   return (
     <div
       ref={ref}
-      className="mx-auto text-black sm:px-4 w-full h-auto max-h-full "
+      className="mx-auto text-black sm:px-4 w-full h-auto max-h-full"
     >
       {/* Header Google */}
       <div className="p-4 flex flex-col items-start w-full ">
@@ -66,87 +70,91 @@ export default function GoogleSearch() {
       </div>
 
       {/* Search Results */}
-      <div className="p-4 space-y-4 w-full">
-        {[
-          {
-            title: "📌 Raka Nugraha Know a Lot About Making Websites",
-            description: (
-              <ul className="list-disc pl-5 space-y-1">
-                <li>
-                  <strong>Full-Stack Development</strong> – Building scalable,
-                  efficient, and modern web applications using React.js,
-                  Express.js, and MongoDB.
-                </li>
-                <li>
-                  <strong>Manual QA & Testing</strong> – Ensuring web
-                  applications run smoothly with structured test case reports
-                  and rigorous bug tracking.
-                </li>
-                <li>
-                  <strong>AI-Driven Features</strong> – Integrating AI-powered
-                  capabilities into web apps, from chatbots to automated
-                  processes.
-                </li>
-                <li>
-                  <strong>Performance Optimization</strong> – Enhancing speed,
-                  security, and scalability for web applications.
-                </li>
-                <li>
-                  <strong>Debugging & Troubleshooting</strong> – Fixing issues,
-                  refining APIs, and streamlining the development process.
-                </li>
-              </ul>
-            ),
-          },
-          {
-            title: "📌 You Can Work With Raka?",
-            description: (
-              <ul className="list-disc pl-5 space-y-1">
-                <li>
-                  <strong>IT & Dev Experience Combined</strong> – Years of
-                  hands-on troubleshooting experience make me great at
-                  identifying and solving tech problems efficiently.
-                </li>
-                <li>
-                  <strong>Project-Based Learning Approach</strong> – Worked on
-                  real-world projects, including API development with Golang, AI
-                  implementations, and full-stack applications.
-                </li>
-                <li>
-                  <strong>Continuous Growth & Adaptability</strong> – Awarded a
-                  JavaScript Expert scholarship and constantly learning the
-                  latest in web development.
-                </li>
-                <li>
-                  <strong>Internship Experience</strong> – Currently interning
-                  as a Manual QA, testing and improving learning bootcamp
-                  platforms while working on AI-powered projects.
-                </li>
-              </ul>
-            ),
-          },
-          {
-            title: "📌 Connect With Raka",
-            description:
-              "If you need a developer who understands both IT infrastructure and full-stack development—or a keen Manual QA with an eye for detail—let’s talk!",
-          },
-        ].map((result, index) => (
-          <div
-            key={index}
-            className="pb-4 border-b border-gray-300 last:border-none"
-          >
-            <a
-              href="#"
-              className="text-blue-700 text-lg font-semibold hover:underline"
+      {showResults && (
+        <div className="p-4 space-y-4 w-full">
+          {[
+            {
+              title:
+                "\ud83d\udccc Raka Nugraha Know a Lot About Making Websites",
+              description: (
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>
+                    <strong>Full-Stack Development</strong> – Building scalable,
+                    efficient, and modern web applications using React.js,
+                    Express.js, and MongoDB.
+                  </li>
+                  <li>
+                    <strong>Manual QA & Testing</strong> – Ensuring web
+                    applications run smoothly with structured test case reports
+                    and rigorous bug tracking.
+                  </li>
+                  <li>
+                    <strong>AI-Driven Features</strong> – Integrating AI-powered
+                    capabilities into web apps, from chatbots to automated
+                    processes.
+                  </li>
+                  <li>
+                    <strong>Performance Optimization</strong> – Enhancing speed,
+                    security, and scalability for web applications.
+                  </li>
+                  <li>
+                    <strong>Debugging & Troubleshooting</strong> – Fixing
+                    issues, refining APIs, and streamlining the development
+                    process.
+                  </li>
+                </ul>
+              ),
+            },
+            {
+              title: "\ud83d\udccc You Can Work With Raka?",
+              description: (
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>
+                    <strong>IT & Dev Experience Combined</strong> – Years of
+                    hands-on troubleshooting experience make me great at
+                    identifying and solving tech problems efficiently.
+                  </li>
+                  <li>
+                    <strong>Project-Based Learning Approach</strong> – Worked on
+                    real-world projects, including API development with Golang,
+                    AI implementations, and full-stack applications.
+                  </li>
+                  <li>
+                    <strong>Continuous Growth & Adaptability</strong> – Awarded
+                    a JavaScript Expert scholarship and constantly learning the
+                    latest in web development.
+                  </li>
+                  <li>
+                    <strong>Internship Experience</strong> – Currently interning
+                    as a Manual QA, testing and improving learning bootcamp
+                    platforms while working on AI-powered projects.
+                  </li>
+                </ul>
+              ),
+            },
+            {
+              title: "\ud83d\udccc Connect With Raka",
+              description:
+                "If you need a developer who understands both IT infrastructure and full-stack development—or a keen Manual QA with an eye for detail—let’s talk!",
+            },
+          ].map((result, index) => (
+            <div
+              key={index}
+              className="pb-4 border-b border-gray-300 last:border-none"
             >
-              {result.title}
-            </a>
-            <div className="text-gray-600 text-sm mt-1">
-              {result.description}
+              <a
+                href="#"
+                className="text-blue-700 text-lg font-semibold hover:underline"
+              >
+                {result.title}
+              </a>
+              <div className="text-gray-600 text-sm mt-1">
+                {result.description}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
